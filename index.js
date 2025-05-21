@@ -1,4 +1,6 @@
 require('dotenv').config();
+console.log("🔑 Loaded OPENAI_API_KEY:", process.env.OPENAI_API_KEY); // 👈 добавь это
+
 const express = require('express');
 const { OpenAI } = require('openai');
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
