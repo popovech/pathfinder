@@ -13,23 +13,95 @@
 
   <main>
     <form id="quiz-form">
-      <section class="step active">
+      <div id="progress-bar"><span></span></div>
+
+      <section class="question-step active">
         <h2>How techy are you right now?</h2>
-        <div class="options">
-          <div class="option">“What’s Git?”</div>
-          <div class="option">“I’ve clicked around some tutorials.”</div>
-          <div class="option">“I do tech things. For money.”</div>
-          <div class="option">“Call me the Gaylor Swift of backend code.”</div>
-        </div>
+        <label><input type="radio" name="techy" value="What’s Git?"> “What’s Git?”</label>
+        <label><input type="radio" name="techy" value="I’ve clicked around some tutorials."> “I’ve clicked around some tutorials.”</label>
+        <label><input type="radio" name="techy" value="I do tech things. For money."> “I do tech things. For money.”</label>
+        <label><input type="radio" name="techy" value="Call me the Gaylor Swift of backend code."> “Call me the Gaylor Swift of backend code.”</label>
+      </section>
+
+      <section class="question-step">
+        <h2>Have you ever worked in a tech-related job? What was it?</h2>
+        <input type="text" name="experience" placeholder="Optional short answer" />
+      </section>
+
+      <section class="question-step">
+        <h2>What role gives you ✨main character energy✨?</h2>
+        <label><input type="radio" name="mainCharacter" value="Design icon"> Design icon, making things look gorgeous</label>
+        <label><input type="radio" name="mainCharacter" value="Quiet coder"> Quiet coder in their corner, headphones on</label>
+        <label><input type="radio" name="mainCharacter" value="Fixer"> Drama-free fixer who makes stuff actually work</label>
+        <label><input type="radio" name="mainCharacter" value="Spreadsheet gremlin"> Spreadsheet gremlin solving mysterious puzzles</label>
+        <label><input type="radio" name="mainCharacter" value="Chaos coordinator"> Kind chaos coordinator who runs the show</label>
+        <label><input type="radio" name="mainCharacter" value="IDK yet"> “IDK yet, just vibing tbh”</label>
+      </section>
+
+      <section class="question-step">
+        <h2>What do you actually enjoy doing?</h2>
+        <label><input type="radio" name="enjoy" value="Drawing"> Drawing, designing, creating</label>
+        <label><input type="radio" name="enjoy" value="Automating"> Making tools + automating stuff</label>
+        <label><input type="radio" name="enjoy" value="Breaking"> Breaking stuff (on purpose)</label>
+        <label><input type="radio" name="enjoy" value="Explaining"> Explaining things so they make sense</label>
+        <label><input type="radio" name="enjoy" value="Organizing"> Organizing info, lists, ideas</label>
+        <label><input type="radio" name="enjoy" value="Helping"> Helping people not scream at their computer</label>
+      </section>
+
+      <section class="question-step">
+        <h2>How do you want to feel in your job?</h2>
+        <label><input type="radio" name="feel" value="Show up as me"> Like I can show up without hiding parts of me</label>
+        <label><input type="radio" name="feel" value="Creative"> Creative + excited to make cool shit</label>
+        <label><input type="radio" name="feel" value="Stable"> Stable. Chill. Rent-paid-core.</label>
+        <label><input type="radio" name="feel" value="Respected"> Respected for being a smart lil baddie</label>
+        <label><input type="radio" name="feel" value="Empowered"> Empowered to lift up other weirdos like me</label>
+      </section>
+
+      <section class="question-step">
+        <h2>Pick your dream work environment:</h2>
+        <label><input type="radio" name="env" value="Leave me alone"> “Leave me alone, I’m building.”</label>
+        <label><input type="radio" name="env" value="Small team"> “Small team, big gay energy.”</label>
+        <label><input type="radio" name="env" value="Corporate"> “Corporate queers with dental insurance.”</label>
+        <label><input type="radio" name="env" value="Purpose and snacks"> “Whatever — just give me purpose (and snacks).”</label>
+      </section>
+
+      <section class="question-step">
+        <h2>How fast you wanna be working?</h2>
+        <label><input type="radio" name="speed" value="Yesterday"> Like… yesterday. Give me the *quickest* entry point.</label>
+        <label><input type="radio" name="speed" value="Few months"> Within a few months — I’m ready to hustle.</label>
+        <label><input type="radio" name="speed" value="Slow"> Slow and steady — I’m here for the long game.</label>
+        <label><input type="radio" name="speed" value="Exploring"> I’m exploring. Don’t rush me, bestie.</label>
+      </section>
+
+      <section class="question-step">
+        <h2>How structured is your brain?</h2>
+        <label><input type="radio" name="brain" value="Checklist"> I love rules. Give me the checklist.</label>
+        <label><input type="radio" name="brain" value="Chaos"> Chaos is fine, I’ll survive.</label>
+        <label><input type="radio" name="brain" value="Structure"> I AM the structure now.</label>
+        <label><input type="radio" name="brain" value="Organized feral"> Somewhere between “organized” and “feral.”</label>
+      </section>
+
+      <section class="question-step">
+        <h2>How spicy should your role be, creativity-wise?</h2>
+        <label><input type="radio" name="spice" value="Max"> Max spice 🌶 — let me serve art, expression, flair</label>
+        <label><input type="radio" name="spice" value="Medium"> Medium — a little room to be extra</label>
+        <label><input type="radio" name="spice" value="Mild"> Mild — just let me build things that work</label>
+      </section>
+
+      <section class="question-step">
+        <h2>How much social energy do you wanna spend at work?</h2>
+        <label><input type="radio" name="social" value="All day"> “I’ll talk to people all day, babe.”</label>
+        <label><input type="radio" name="social" value="One meeting"> “One (1) meeting per day, please.”</label>
+        <label><input type="radio" name="social" value="Lock me away"> “Put me in a server room and lock the door.”</label>
       </section>
 
       <div class="controls">
         <button type="button" id="next-btn" disabled>Next</button>
-        <button type="submit" id="submit-btn" style="display:none;">✨ Match me ✨</button>
+        <button type="submit" id="submit-btn" style="display: none;">✨ Match me ✨</button>
       </div>
     </form>
 
-    <div id="loading" style="display:none;">Thinking hard... 🧠</div>
+    <div id="loading" style="display: none;">Thinking hard... 🧠</div>
     <div id="result"></div>
   </main>
 
