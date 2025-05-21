@@ -1,5 +1,6 @@
-const express = require('express'); // Express-сервер
-const { OpenAI } = require('openai'); // OpenAI SDK
+require('dotenv').config(); // загружаем переменные из .env
+const { OpenAI } = require('openai'); // импорт OpenAI SDK
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY }); // создаём экземпляр с ключом из .env
 
 const app = express();
 const PORT = 3000;
@@ -8,9 +9,7 @@ app.use(express.static('public'));
 app.use(express.json()); // Позволяет Express читать JSON из тела POST-запросов
 
 // 🔑 Подключаем OpenAI
-const openai = new OpenAI({
-  apiKey: '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' // 👈 не забудь заменить этой строкой свой реальный ключ
-});
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 // 🌐 Главная страница
 app.get('/', (req, res) => {
